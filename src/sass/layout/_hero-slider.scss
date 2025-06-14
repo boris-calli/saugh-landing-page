@@ -1,0 +1,188 @@
+@use "sass:color";
+@use "./../abstracts" as helpers;
+
+$hero-title-clr: helpers.clr-font("white");
+$hero-description-clr: helpers.clr-font("white");
+$form-submit-btn-clr: helpers.clr-font("white");
+$form-height-field: 53px;
+$form-width-submit-btn: 172px;
+$form-width-email-field: 426px;
+$form-bg-clr-submit-btn: helpers.clr-bg-btn("teal-blue");
+$bg-clr-layer-blur: helpers.clr-bg("black");
+$bg-clr-layer-blur-opacity: hsla(
+  color.channel($bg-clr-layer-blur, "hue", $space: hsl),
+  color.channel($bg-clr-layer-blur, "saturation", $space: hsl),
+  color.channel($bg-clr-layer-blur, "lightness", $space: hsl),
+  0.2
+);
+$hero-side-pd-b: 25px;
+$hero-side-pd-t: 220px;
+$pagination-bullet-bg-clr: helpers.clr-bg("white");
+
+.hero-section {
+  &__hero-slider {
+    z-index: -5;
+    .swiper-wrapper {
+      .swiper-slide {
+        div {
+          width: 100%;
+          height: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        &:nth-of-type(4) {
+          div {
+            img {
+              object-position: center top;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__layer-blur {
+    z-index: -3;
+    background-color: $bg-clr-layer-blur-opacity;
+    backdrop-filter: blur(5px);
+  }
+}
+
+.hero-side {
+  padding: {
+    top: $hero-side-pd-b;
+    bottom: $hero-side-pd-b;
+  }
+  &__title {
+    font-size: 48px;
+    text-transform: uppercase;
+    color: $hero-title-clr;
+    font-weight: 700;
+    text-align: center;
+    max-width: 600px;
+  }
+  &__description {
+    font-size: 24px;
+    line-height: 24px;
+    color: $hero-description-clr;
+    font-weight: 400;
+    text-align: center;
+    padding: {
+      bottom: 35px;
+      top: 50px;
+    }
+  }
+  &__sign-up-form {
+    max-width: ($form-width-email-field + $form-width-submit-btn);
+  }
+  .sign-up-form {
+    &__email-field {
+      height: $form-height-field;
+      width: 100%;
+      border: none;
+      &:focus {
+        outline: none;
+      }
+      @include helpers.responsive-sm-min-width {
+        width: calc(100% - $form-width-submit-btn);
+      }
+    }
+    &__submit-btn {
+      height: $form-height-field;
+      width: 100%;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: $form-submit-btn-clr;
+      font-weight: 700;
+      text-align: center;
+      background-color: $form-bg-clr-submit-btn;
+      border: none;
+      @include helpers.responsive-sm-min-width {
+        width: $form-width-submit-btn;
+      }
+    }
+  }
+  &__pagination-container {
+    padding-top: 150px;
+    .swiper-pagination-bullets {
+      display: flex;
+      column-gap: 6px;
+      justify-content: center;
+      z-index: -2;
+      bottom: 0;
+      .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        background-color: $pagination-bullet-bg-clr;
+        border-radius: 0;
+        margin: 0;
+      }
+
+      @include helpers.responsive-md-min-width {
+        bottom: 50px;
+      }
+    }
+    .swiper-pagination-fraction {
+      color: $hero-description-clr;
+      font-size: 24px;
+      font-weight: 400;
+      z-index: -2;
+      bottom: 40px;
+      @include helpers.responsive-md-min-width {
+        bottom: 90px;
+      }
+    }
+    @include helpers.responsive-md-min-width {
+      padding-top: 250px;
+    }
+    @include helpers.responsive-lg-min-width {
+      padding-top: 280px;
+    }
+    @include helpers.responsive-xl-min-width {
+      padding-top: 310px;
+    }
+  }
+  &__hero-slide-next-btn {
+    position: absolute;
+    right: 0;
+    bottom: 40px;
+    @include helpers.responsive-md-min-width {
+      bottom: 80px;
+    }
+  }
+  &__hero-slide-prev-btn {
+    position: absolute;
+    left: 0;
+    bottom: 40px;
+    @include helpers.responsive-md-min-width {
+      bottom: 80px;
+    }
+  }
+  @include helpers.responsive-sm-min-width {
+    padding: {
+      top: ($hero-side-pd-t - 170);
+    }
+  }
+  @include helpers.responsive-md-min-width {
+    padding: {
+      top: ($hero-side-pd-t - 150);
+    }
+  }
+  @include helpers.responsive-lg-min-width {
+    padding: {
+      top: ($hero-side-pd-t - 120);
+    }
+  }
+  @include helpers.responsive-xl-min-width {
+    padding: {
+      top: ($hero-side-pd-t - 90);
+    }
+  }
+  @include helpers.responsive-xxl-min-width {
+    padding: {
+      top: $hero-side-pd-t;
+    }
+  }
+}

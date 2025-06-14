@@ -1,0 +1,29 @@
+@use "./../abstracts" as helpers;
+
+$pd-y: 12px;
+$pd-x: 16px;
+
+.header-side__dropdown {
+  button {
+    background-color: transparent;
+    border: 2px solid helpers.clr-bg-btn("white");
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    color: helpers.clr-font("white");
+    text-transform: uppercase;
+    font-size: 14.15px;
+    font-weight: 700;
+    padding: {
+      top: $pd-y;
+      bottom: $pd-y;
+      left: $pd-x;
+      right: $pd-x;
+    }
+    div {
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}

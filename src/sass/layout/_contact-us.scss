@@ -1,0 +1,82 @@
+@use "./../abstracts" as helpers;
+
+$bg-clr-form: helpers.clr-bg-section("dark-gray");
+$bg-clr-section-contact-us: helpers.clr-bg-section("gray");
+$pd-form: 65px;
+$form-title-clr: helpers.clr-font("teal");
+$form-description-clr: helpers.clr-font("white");
+$form-label-clr: helpers.clr-font("light-gray");
+$input-border-clr: hsl(0, 0%, 21%);
+
+%input-styled {
+  background-color: $bg-clr-form;
+  border: 1px solid $input-border-clr;
+  border-radius: 0;
+  color: $form-label-clr;
+  font-size: 16px;
+  &:focus {
+    background-color: $bg-clr-form;
+    color: $form-label-clr;
+    font-size: 16px;
+  }
+}
+
+.contact-us-section {
+  background-color: $bg-clr-section-contact-us;
+}
+
+.contact-us-side {
+  &__form {
+    max-width: 883px;
+    padding: $pd-form;
+    background-color: $bg-clr-form;
+    margin: auto;
+  }
+  &__form-title {
+    font-size: 26px;
+    text-transform: uppercase;
+    color: $form-title-clr;
+    font-weight: 700;
+    text-align: center;
+  }
+  &__form-description {
+    font-size: 16px;
+    opacity: 0.588;
+    text-align: center;
+    color: $form-description-clr;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    @include helpers.responsive-md-min-width {
+      padding-bottom: 30px;
+    }
+    @include helpers.responsive-lg-min-width {
+      padding-bottom: 50px;
+    }
+  }
+  &__form-field {
+    input {
+      @extend %input-styled;
+    }
+    textarea {
+      @extend %input-styled;
+    }
+    label {
+      font-size: 16px;
+      text-transform: uppercase;
+      color: $form-label-clr;
+      margin-left: 12px;
+    }
+  }
+  &__form-submit-side {
+    padding-top: 0;
+    @include helpers.responsive-sm-min-width {
+      padding-top: 20px;
+    }
+    @include helpers.responsive-md-min-width {
+      padding-top: 30px;
+    }
+    @include helpers.responsive-lg-min-width {
+      padding-top: 50px;
+    }
+  }
+}

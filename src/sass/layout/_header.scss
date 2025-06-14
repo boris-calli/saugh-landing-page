@@ -1,0 +1,66 @@
+@use "./../abstracts/index" as helpers;
+
+$bg-color-section: "teal-blue";
+$bg-clr-white: "white";
+$pd-y: 45px;
+
+.header {
+  &-section {
+    background-color: helpers.clr-bg-section($bg-color-section);
+    padding: {
+      top: ($pd-y - 25px);
+      bottom: ($pd-y - 25px);
+    }
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    @include helpers.responsive-md-min-width {
+      padding: {
+        top: ($pd-y - 15px);
+        bottom: ($pd-y - 15px);
+      }
+    }
+    @include helpers.responsive-lg-min-width {
+      padding: {
+        top: $pd-y;
+        bottom: $pd-y;
+      }
+    }
+  }
+  &-side {
+    &__icon-side {
+      display: none;
+      @include helpers.responsive-sm-min-width {
+        display: flex;
+        column-gap: 20px;
+        align-items: center;
+      }
+      &-separator {
+        width: 1px;
+        height: 18px;
+        background-color: helpers.clr-bg($bg-clr-white);
+      }
+    }
+    &__social-section {
+      display: flex;
+      align-items: center;
+      column-gap: 30px;
+      a {
+        div {
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+    &__search-btn {
+      background-color: transparent;
+      border: none;
+      div {
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}

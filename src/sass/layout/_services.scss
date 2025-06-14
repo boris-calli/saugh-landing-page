@@ -1,0 +1,45 @@
+@use "./../abstracts" as helpers;
+
+$service-row-gap: 20px;
+$service-row-gap-md: 30px;
+$service-row-gap-lg: 50px;
+$service-row-gap-xl: 75px;
+$service-row-gap-xxl: 90px;
+
+.services-side {
+  &__title-section {
+    padding-bottom: 20px;
+    @include helpers.responsive-md-min-width {
+      padding-bottom: 30px;
+    }
+    @include helpers.responsive-lg-min-width {
+      padding-bottom: 40px;
+    }
+    @include helpers.responsive-xl-min-width {
+      padding-bottom: 50px;
+    }
+    @include helpers.responsive-xxl-min-width {
+      padding-bottom: 60px;
+    }
+  }
+  &__service-card-section {
+    display: flex;
+    flex-direction: column;
+    row-gap: $service-row-gap;
+    @include helpers.responsive-md-min-width {
+      row-gap: $service-row-gap-md;
+    }
+    @include helpers.responsive-lg-min-width {
+      row-gap: $service-row-gap-lg;
+    }
+    @include helpers.responsive-xl-min-width {
+      row-gap: $service-row-gap-xl;
+    }
+    @include helpers.responsive-xxl-min-width {
+      row-gap: $service-row-gap-xxl;
+    }
+  }
+  &__service-card-row-side {
+    row-gap: $service-row-gap;
+  }
+}

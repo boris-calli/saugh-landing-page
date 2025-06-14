@@ -1,0 +1,133 @@
+@use "sass:color";
+@use "./../abstracts" as helpers;
+
+$social-icon-clr: helpers.clr-bg("white");
+$bg-clr-card: helpers.clr-bg("black");
+$bg-clr-hover-card: hsla(
+  color.channel($bg-clr-card, "hue", $space: hsl),
+  color.channel($bg-clr-card, "saturation", $space: hsl),
+  color.channel($bg-clr-card, "lightness", $space: hsl),
+  0.25
+);
+
+.creatives-side {
+  &__gallery {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding-top: 40px;
+  }
+  &__avatar-container {
+    width: 170px;
+    height: 175px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: none;
+    }
+  }
+  &__creative-info {
+    position: relative;
+    &:nth-of-type(1) {
+      img {
+        object-position: 92% 50%;
+      }
+    }
+    &:nth-of-type(2) {
+      img {
+        object-position: 60% 50%;
+      }
+    }
+    &:nth-of-type(3) {
+      img {
+        object-position: 55% 35%;
+      }
+    }
+    &:nth-of-type(4) {
+      img {
+        object-position: 60% 10%;
+      }
+    }
+    &:nth-of-type(5) {
+      img {
+        object-position: 10% 0%;
+      }
+    }
+    &:nth-of-type(6) {
+      img {
+        object-position: 38% 28%;
+      }
+    }
+    &:nth-of-type(7) {
+      img {
+        object-position: 48% 3%;
+      }
+    }
+    &:nth-of-type(8) {
+      img {
+        object-position: 40% 50%;
+      }
+    }
+    &:nth-of-type(9) {
+      img {
+        object-position: 70% 50%;
+      }
+    }
+    &:nth-of-type(10) {
+      img {
+        object-position: 70% 50%;
+      }
+    }
+    &:nth-of-type(11) {
+      img {
+        object-position: 50% 50%;
+      }
+    }
+    &:nth-of-type(12) {
+      img {
+        object-position: 75% 50%;
+      }
+    }
+  }
+  &__hover-card {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $bg-clr-hover-card;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &__creative-social-media {
+    display: flex;
+    column-gap: 10px;
+  }
+  &__social-icon {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    border: {
+      radius: 100%;
+      style: solid;
+      width: 2px;
+      color: $social-icon-clr;
+    }
+    svg {
+      fill: $social-icon-clr;
+      g {
+        fill: $social-icon-clr;
+      }
+      path {
+        fill: $social-icon-clr;
+      }
+    }
+  }
+}

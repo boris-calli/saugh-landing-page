@@ -1,0 +1,23 @@
+@use "./../abstracts" as helpers;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+$font-monteserrat: helpers.font-family-type("montserrat");
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-family: $font-monteserrat;
+  }
+}
+
+p {
+  font-family: $font-monteserrat;
+}
+
+a {
+  font-family: $font-monteserrat;
+  text-decoration: none;
+}
+
+button {
+  font-family: $font-monteserrat;
+}

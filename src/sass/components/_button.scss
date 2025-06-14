@@ -1,0 +1,105 @@
+@use "sass:color";
+@use "./../abstracts" as helpers;
+
+$service-card-btn-clr: "black";
+$fully-responsive-btn-clr: "white";
+$submit-form-contact-us-btn-bg-clr: "orange";
+$submit-form-contact-us-btn-font-clr: "white";
+$blog-slide-next-btn-font-clr: "white";
+$blog-slide-next-btn-border-clr: "white";
+$blog-slide-next-btn-bg-clr: "teal-blue";
+$hero-slider-btn-bg-clr: helpers.clr-bg-btn("white");
+$hero-slider-btn-bg-clrr-opacity: hsla(
+  color.channel($hero-slider-btn-bg-clr, "hue", $space: hsl),
+  color.channel($hero-slider-btn-bg-clr, "saturation", $space: hsl),
+  color.channel($hero-slider-btn-bg-clr, "lightness", $space: hsl),
+  0.149
+);
+
+%hero-slider-btn {
+  width: 49px;
+  height: 47px;
+  background-color: $hero-slider-btn-bg-clrr-opacity;
+  border: {
+    style: solid;
+    width: 2px;
+    color: $hero-slider-btn-bg-clr;
+  }
+  svg {
+    path {
+      stroke: $hero-slider-btn-bg-clr;
+    }
+  }
+}
+
+.custom-btn {
+  border: {
+    style: solid;
+    width: 2px;
+  }
+  text-transform: uppercase;
+  font-weight: 700;
+  &--service-card {
+    $pd-y: 14px;
+    $pd-x: 30px;
+    $font-size: 14px;
+    color: helpers.clr-font($service-card-btn-clr);
+    @include helpers.custom-btn($pd-y, $pd-x, $font-size);
+    background-color: transparent;
+    border-color: helpers.clr-bg-btn($service-card-btn-clr);
+  }
+  &--fully-responsive {
+    $pd-y: 20px;
+    $pd-x: 55px;
+    $font-size: 14px;
+    color: helpers.clr-font($fully-responsive-btn-clr);
+    @include helpers.custom-btn($pd-y, $pd-x, $font-size);
+    background-color: transparent;
+    border-color: helpers.clr-bg-btn($fully-responsive-btn-clr);
+    margin: auto;
+    display: block;
+    width: 100%;
+    @include helpers.responsive-sm-min-width {
+      width: auto;
+    }
+  }
+  &--submit-form-contact-us {
+    $pd-y: 20px;
+    $pd-x: 35px;
+    $font-size: 14px;
+    color: helpers.clr-font($submit-form-contact-us-btn-font-clr) !important;
+    @include helpers.custom-btn($pd-y, $pd-x, $font-size);
+    background-color: helpers.clr-bg-btn(
+      $submit-form-contact-us-btn-bg-clr
+    ) !important;
+    border-color: helpers.clr-bg-btn(
+      $submit-form-contact-us-btn-bg-clr
+    ) !important;
+    margin: auto;
+    display: block;
+    width: 100%;
+    @include helpers.responsive-sm-min-width {
+      width: auto;
+    }
+  }
+  &__blog-slide-next-button {
+    $pd-y: 0px;
+    $pd-x: 40px;
+    $font-size: 32px;
+    @include helpers.custom-btn($pd-y, $pd-x, $font-size) {
+      border-color: helpers.clr-bg-btn($blog-slide-next-btn-border-clr);
+      color: helpers.clr-font($blog-slide-next-btn-font-clr);
+      background-color: helpers.clr-bg-btn($blog-slide-next-btn-bg-clr);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 5;
+    }
+  }
+  &__hero-slider-next-btn {
+    @extend %hero-slider-btn;
+  }
+  &__hero-slider-prev-btn {
+    @extend %hero-slider-btn;
+  }
+}

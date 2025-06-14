@@ -1,0 +1,48 @@
+@use "./../abstracts" as helpers;
+
+$title-clr-teal: "teal";
+$title-clr-white: "white";
+$diamon-clr-teal-blue: "teal-blue";
+$diamon-clr-white: "white";
+$title-pd-b: 25px;
+
+%diamond-title-decoration {
+  width: 18px;
+  height: 18px;
+  transform: rotate(45deg);
+}
+
+.service-side__title-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-section {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0;
+  padding-bottom: $title-pd-b;
+  &--teal-blue-color {
+    color: helpers.clr-font($title-clr-teal);
+  }
+  &--white-color {
+    color: helpers.clr-font($title-clr-white);
+  }
+  &__decoration {
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    column-gap: 8px;
+    align-items: center;
+  }
+  &--diamond-teal-blue {
+    @extend %diamond-title-decoration;
+    background-color: helpers.clr-bg($diamon-clr-teal-blue);
+  }
+  &--diamond-white {
+    @extend %diamond-title-decoration;
+    background-color: helpers.clr-bg($diamon-clr-white);
+  }
+}

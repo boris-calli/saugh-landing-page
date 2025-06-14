@@ -1,0 +1,32 @@
+@use "sass:map";
+@use "sass:list";
+@use "sass:string";
+@use "variables" as var;
+
+@function clr-bg-section($clr-name) {
+  @return map.get(var.$clr-bg-section, $clr-name);
+}
+
+@function clr-bg($clr-name) {
+  @return map.get(var.$clr-bg, $clr-name);
+}
+
+@function clr-bg-btn($clr-name) {
+  @return map.get(var.$clr-bg-btn, $clr-name);
+}
+
+@function clr-font($clr-name) {
+  @return map.get(var.$clr-font, $clr-name);
+}
+
+@function get-breakpoint($point) {
+  @return map.get(var.$breakpoints, $point);
+}
+
+@function font-family-type($font-name) {
+  @if $font-name == "montserrat" {
+    @return string.unquote(list.nth(var.$font-family-list, 1));
+  } @else {
+    @return null;
+  }
+}

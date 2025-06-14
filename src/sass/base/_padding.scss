@@ -1,0 +1,38 @@
+@use "./../abstracts" as helpers;
+
+$pd-y: 20px;
+$pd-y-md: 30px;
+$pd-y-lg: 70px;
+$pd-y-xl: 100px;
+$pd-y-xxl: 120px;
+
+.pd-section {
+  padding: {
+    top: $pd-y;
+    bottom: $pd-y;
+  }
+  @include helpers.responsive-md-min-width {
+    padding: {
+      top: $pd-y-md;
+      bottom: $pd-y-md;
+    }
+  }
+  @include helpers.responsive-lg-min-width {
+    padding: {
+      top: $pd-y-lg;
+      bottom: $pd-y-lg;
+    }
+  }
+  @include helpers.responsive-xl-min-width {
+    padding: {
+      top: $pd-y-xl;
+      bottom: $pd-y-xl;
+    }
+  }
+  @include helpers.responsive-xxl-min-width {
+    padding: {
+      top: $pd-y-xxl;
+      bottom: $pd-y-xxl;
+    }
+  }
+}

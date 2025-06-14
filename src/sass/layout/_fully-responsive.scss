@@ -1,0 +1,38 @@
+@use "sass:color";
+@use "./../abstracts" as helpers;
+
+$bg-clr: helpers.clr-bg-section("dark-gray");
+$bg-clr-fully-responsive-section: hsla(
+  color.channel($bg-clr, "hue", $space: hsl),
+  color.channel($bg-clr, "saturation", $space: hsl),
+  color.channel($bg-clr, "lightness", $space: hsl),
+  0.688
+);
+$description-clr: helpers.clr-font("white");
+$description-pd-y: 32px;
+
+.fully-responsive-section {
+  background: linear-gradient(
+      $bg-clr-fully-responsive-section,
+      $bg-clr-fully-responsive-section
+    ),
+    url("./../assets/images/fully-responsive-section-bg.webp");
+  mix-blend-mode: multiply;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.fully-responsive-side {
+  &__description {
+    font-size: 20px;
+    line-height: 36px;
+    text-align: center;
+    margin-bottom: 0;
+    color: $description-clr;
+    padding: {
+      top: $description-pd-y;
+      bottom: $description-pd-y;
+    }
+  }
+}

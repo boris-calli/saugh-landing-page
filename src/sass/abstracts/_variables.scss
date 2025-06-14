@@ -1,0 +1,40 @@
+// colors
+$clr-bg-section: (
+  "teal-blue": hsl(161, 100%, 44%),
+  "white": hsl(0, 0%, 100%),
+  "dark-gray": hsl(0, 0%, 16%),
+  "gray": hsl(240, 0%, 41%),
+);
+
+$clr-bg: (
+  "white": hsl(0, 0%, 100%),
+  "teal-blue": hsl(161, 100%, 44%),
+  "black": hsl(0, 0%, 0%),
+);
+
+$clr-bg-btn: (
+  "white": hsl(0, 0%, 100%),
+  "black": hsl(0, 0%, 0%),
+  "orange": hsl(23, 78%, 64%),
+  "teal-blue": hsl(161, 100%, 44%),
+);
+
+$clr-font: (
+  "white": hsl(0, 0%, 100%),
+  "teal": hsl(161, 100%, 44%),
+  "light-orange": hsl(23, 78%, 64%),
+  "light-gray": hsl(0, 0%, 54%),
+  "dark-gray": hsl(0, 0%, 16%),
+  "black": hsl(0, 0%, 0%),
+);
+
+$breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1400px,
+);
+
+// fonts
+$font-family-list: '"Montserrat", sans-serif';

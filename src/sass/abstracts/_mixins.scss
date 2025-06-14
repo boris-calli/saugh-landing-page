@@ -1,0 +1,54 @@
+@use "functions" as fn;
+
+$sm: fn.get-breakpoint("sm");
+$md: fn.get-breakpoint("md");
+$lg: fn.get-breakpoint("lg");
+$xl: fn.get-breakpoint("xl");
+$xxl: fn.get-breakpoint("xxl");
+
+@mixin responsive-min-width($point) {
+  @media screen and (min-width: $point) {
+    @content;
+  }
+}
+
+@mixin responsive-sm-min-width {
+  @media screen and (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin responsive-md-min-width {
+  @media screen and (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin responsive-lg-min-width {
+  @media screen and (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin responsive-xl-min-width {
+  @media screen and (min-width: $xl) {
+    @content;
+  }
+}
+
+@mixin responsive-xxl-min-width {
+  @media screen and (min-width: $xxl) {
+    @content;
+  }
+}
+
+@mixin custom-btn($pd-y, $pd-x, $font-size) {
+  padding: {
+    top: $pd-y;
+    bottom: $pd-y;
+    right: $pd-x;
+    left: $pd-x;
+  }
+  font-size: $font-size;
+  @content;
+}
