@@ -43,8 +43,6 @@ drone-landing-page/
 - **HTML5** limpio y semántico
 - **Sass** (`.scss`) para estilos escalables
 - **PostCSS**, con los siguientes plugins:
-  - `postcss-import`
-  - `postcss-nesting`
   - `autoprefixer`
   - `cssnano`
   - `@fullhuman/postcss-purgecss`
@@ -104,8 +102,6 @@ npm run build
 - `postcss-cli`
 - `autoprefixer`
 - `cssnano`
-- `postcss-nesting`
-- `postcss-import`
 - `@fullhuman/postcss-purgecss`
 - `html-minifier`
 - `imagemin`
